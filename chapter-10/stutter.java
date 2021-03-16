@@ -18,3 +18,16 @@ public static void stutter(ArrayList<String> array, int k) {
         
     }
 }
+
+//Much simpler solution -Hopper04
+
+public static void stutter(ArrayList<String> arr, int k){
+    for(int i = 0; i < arr.size(); i = i + k){
+        if(k <= 0){
+            arr.clear();
+        }
+        for(int j = 0; j < k - 1; j++){
+            arr.add(i + j, arr.get(i));
+        }
+    }
+}
